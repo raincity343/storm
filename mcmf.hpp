@@ -20,6 +20,7 @@ struct Mcmf {
   }
 
   int ae(int u, int v, Flow cap, Cost cost) {
+    assert(cap >= 0);
     adj[u].push_back(len(es)), es.push_back({v, cap, cost});
     adj[v].push_back(len(es)), es.push_back({u, 0, -cost});
     return len(es) - 2;

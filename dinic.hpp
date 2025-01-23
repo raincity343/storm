@@ -19,6 +19,7 @@ struct Dinic {
   }
 
   int ae(int u, int v, Flow cap, Flow rcap = 0) {
+    assert(cap >= 0), assert(rcap >= 0);
     adj[u].push_back(len(es)), es.push_back({v, cap});
     adj[v].push_back(len(es)), es.push_back({u, rcap});
     return len(es) - 2;
