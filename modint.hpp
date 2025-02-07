@@ -13,22 +13,22 @@ struct modint {
     return *this;
   }
 
+  friend mint operator+(mint x, mint y) {
+    return x += y;
+  }
+
   mint &operator-=(mint x) {
     v -= x.v, v += (v < 0) * mod;
     return *this;
   }
 
+  friend mint operator-(mint x, mint y) {
+    return x -= y;
+  }
+
   mint &operator*=(mint x) {
     v = ll(v) * x.v % mod;
     return *this;
-  }
-
-  friend mint operator+(mint x, mint y) {
-    return x += y;
-  }
-
-  friend mint operator-(mint x, mint y) {
-    return x -= y;
   }
 
   friend mint operator*(mint x, mint y) {
